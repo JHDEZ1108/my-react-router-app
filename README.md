@@ -16,8 +16,8 @@ This is a simple project to practice **navigation and routing** using **React Ro
 Clone the repository and install dependencies:
 
 ```bash
-git clone <repository-url>
-cd <project-folder>
+git clone git@github.com:JHDEZ1108/my-react-router-app.git
+cd my-react-router-app
 npm install
 ```
 
