@@ -5,6 +5,10 @@ import Dashboard from "./components/Dashboards/Dashboard";
 import { Suspense } from "react";
 import Settings from "./components/Settings/Settings";
 import Overview from "./components/Overview/Overview";
+import ProtectedRoute from "./components/ProtectedRoutes/ProtectedRoute";
+import Profile from "./components/Profile/Profile";
+import NotFound from "./components/NotFound/NotFound";
+
 
 function App() {
 
@@ -20,6 +24,9 @@ function App() {
           </li>
           <li>
             <Link to="/dashboard">Dashboard</Link>
+          </li>
+          <li>
+            <Link to="/profile">Profile</Link>
           </li>
         </ul>
       </nav>
@@ -37,6 +44,13 @@ function App() {
           }>
           </Route>
         </Route>
+        <Route path="/profile" element={
+          <ProtectedRoute isAuthenticated={true}>
+            <Profile />
+          </ProtectedRoute>
+        }>
+        </Route>
+        <Route path="*" element={<NotFound />}></Route>
       </Routes>
       
     </div>
